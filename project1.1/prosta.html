@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moja pierwsza strona</title>
+  <script src="./kolorujtlo.js" type="text/javascript"></script>
+  <script src="timadate.js" type="text/javascript"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      /*background-color: #f0f0f0;*/
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 400px;
+    }
+    h1 {
+      color: #333;
+    }
+    p {
+      color: #555;
+      line-height: 1.5;
+    }
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body onload="startclock()">
+<div id="zegarek"></div>
+<div id="data"></div>
+
+<FORM method="post" name="background">
+  <input type="button" value="zolty" onclick="changeBackground('#fff000')">
+  <input type="button" value="czarny" onclick="changeBackground('#000000')">
+  <input type="button" value="czarny" onclick="changeBackground('#ffffff')">
+  <input type="button" value="czarny" onclick="changeBackground('#ff8000')">
+  <input type="button" value="czarny" onclick="changeBackground('#FF0000')">
+  <input type="button" value="czarny" onclick="changeBackground('#c0c0c0')">
+  <input type="button" value="czarny" onclick="changeBackground('#00f')">
+
+</FORM>
+
+
+<div class="container">
+  <h1>Witaj na mojej stronie!</h1>
+  <p>To jest prosta strona HTML bez żadnych skryptów.
+    Możesz tu dodać dowolną treść, zdjęcia lub linki.</p>
+  <a href="https://example.com">Odwiedź Example.com</a>
+</div>
+
+</body>
+</html>

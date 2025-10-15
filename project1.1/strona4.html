@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Galeria — zrzuty ekranu i grafiki Dota 2">
+    <meta name="keywords" content="Dota2, galeria, screenshots">
+    <meta name="author" content="Raman Vaitsiuk">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Galeria — Dota 2</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body class="subpage">
+<header class="site-header small">
+    <div class="container header-inner">
+        <div class="logo"><a href="strona1.html">DOTA<span>2</span>fan</a></div>
+        <nav class="main-nav" aria-label="Nawigacja">
+            <ul>
+                <li><a href="strona2.html">Strona główna</a></li>
+                <li><a href="strona1.html">O hobby</a></li>
+                <li><a href="strona3.html">Bohaterowie</a></li>
+                <li><a href="strona6.html">Przedmioty</a></li>
+                <li><a href="strona4.html" class="active">Galeria</a></li>
+                <li><a href="strona5.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <h1>Galeria (moje zrzuty ekranu i grafiki)</h1>
+
+    <section class="gallery-grid" aria-label="Galeria obrazów">
+        <figure><img src="images/windranger.avif" alt="Windranger - bohaterka z łukiem"><figcaption>Windranger</figcaption></figure>
+        <figure><img src="images/drow_ranger.jpg" alt="Drow Ranger - łuczniczka"><figcaption>Drow Ranger</figcaption></figure>
+        <figure><img src="images/queen_of_pain.jpg" alt="Queen of Pain - demoniczna czarodziejka"><figcaption>Queen of Pain</figcaption></figure>
+        <figure><img src="images/lc.webp" alt="Legion Commander - przywódczyni legionu"><figcaption>Legion Commander</figcaption></figure>
+        <figure><img src="images/spectre.jpg" alt="Spectre - mistyczny zabójca"><figcaption>Spectre</figcaption></figure>
+        <figure><img src="images/earthshaker_arcana.jpg" alt="Earthshaker z arkaną"><figcaption>Earth Shaker</figcaption></figure>
+        <figure><img src="images/phantom-assassin.jpg" alt="Phantom Assassin - zabójczyni"><figcaption>Phantom Assassin</figcaption></figure>
+        <figure><img src="images/cm.jpg.jpg" alt="Crystal Maiden - czarodziejka lodu"><figcaption>Crystal Maiden</figcaption></figure>
+        <figure><img src="images/oracle.jpg" alt="Oracle - wróżbita"><figcaption>Oracle</figcaption></figure>
+        <figure><img src="images/jugernaut.jpg" alt="Juggernaut - samuraj"><figcaption>Juggernaut</figcaption></figure>
+        <figure><img src="images/pudge.jpg" alt="Pudge - rzeźnik"><figcaption>Pudge</figcaption></figure>
+        <figure><img src="images/baby-invoker.png" alt="Invoker - mag"><figcaption>Invoker</figcaption></figure>
+    </section>
+
+    <section class="gallery-controls">
+        <h2>Ustawienia galerii</h2>
+        <div class="background-controls">
+            <p>Zmień kolor tła strony:</p>
+            <button onclick="changeBackground('#0b1220')">Ciemne tło</button>
+            <button onclick="changeBackground('#1e3a8a')">Niebieskie tło</button>
+            <button onclick="changeBackground('#1e293b')">Szare tło</button>
+            <button onclick="changeBackground('#f3f4f6')">Jasne tło</button>
+            <button onclick="changeBackground('#1a202c')">Bardzo ciemne</button>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <p>© <span id="year5"></span> DOTA2fan</p>
+
+        <div class="date-time">
+            <p>Data: <span id="data"></span></p>
+            <p>Godzina: <span id="zegarek"></span></p>
+        </div>
+
+        <div class="background-controls">
+            <button onclick="changeBackground('#0b1220')">Ciemne tło</button>
+            <button onclick="changeBackground('#1e3a8a')">Niebieskie tło</button>
+            <button onclick="changeBackground('#1e293b')">Szare tło</button>
+            <button onclick="changeBackground('#f3f4f6')">Jasne tło</button>
+        </div>
+    </div>
+</footer>
+
+<script src="./timadate.js"></script>
+<script src="./kolorujtlo.js"></script>
+<script>
+    document.getElementById('year5').textContent = new Date().getFullYear();
+    window.onload = function() {
+        startclock();
+        loadSavedBackground();
+    };
+</script>
+</body>
+</html>

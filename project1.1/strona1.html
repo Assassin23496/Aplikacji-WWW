@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="O moim hobby — Dota 2">
+    <meta name="keywords" content="Dota2, historia, hobby">
+    <meta name="author" content="Raman Vaitsiuk">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>O hobby — Dota 2</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body class="subpage">
+<header class="site-header small">
+    <div class="container header-inner">
+        <div class="logo"><a href="strona1.html">DOTA<span>2</span>fan</a></div>
+        <nav class="main-nav" aria-label="Nawigacja główna">
+            <ul>
+                <li><a href="strona2.html">Strona główna</a></li>
+                <li><a href="strona1.html" class="active">O hobby</a></li>
+                <li><a href="strona3.html">Bohaterowie</a></li>
+                <li><a href="strona6.html">Przedmioty</a></li>
+                <li><a href="strona4.html">Galeria</a></li>
+                <li><a href="strona5.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+<main class="container">
+    <article>
+        <h1>Dlaczego Dota 2 to moje hobby</h1>
+        <p>Moje ulubione momenty to kiedy ja gram razem z przyjacielami i czuje że mi jest brdzo fajnie.</p>
+        <section>
+            <h2>Moja historia</h2>
+            <p>Zacząłem grać w Dota 2 w 2024. Gra nauczyła mnie współpracy zespołowej i szybkiego podejmowania decyzji.</p>
+        </section>
+
+        <section>
+            <h2>Czego się nauczyłem</h2>
+            <ul>
+                <li>Planowanie taktyczne</li>
+                <li>Radzenie sobie ze stresem podczas meczu</li>
+                <li>Analiza powtórek</li>
+            </ul>
+        </section>
+    </article>
+
+    <aside>
+        <h3>Ciekawe fakty</h3>
+        <pre>
+1. Dota 2 powstała jako kontynuacja modyfikacji do Warcraft III.
+Oryginalna mapa nazywała się Defense of the Ancients (DotA) i była stworzona przez fanów. Valve później kupiło prawa i zrobiło z niej pełnoprawną grę.
+
+2. W Dota 2 każdy mecz jest inny.
+Gra ma ponad 120 bohaterów, a każdy z nich ma unikalne umiejętności. Dzięki temu nie ma dwóch identycznych rozgrywek.
+
+3. The International to jeden z największych turniejów e-sportowych na świecie.
+Pula nagród często przekracza 40 milionów dolarów — to więcej niż w wielu tradycyjnych sportach!
+
+4. Dota 2 ma własną ekonomię i rynek przedmiotów.
+Gracze mogą zdobywać lub kupować skórki (tzw. skiny) dla bohaterów i sprzedawać je na Steam Market — czasem za setki euro.
+
+5. Gra wymaga nie tylko refleksu, ale też strategii.
+Zwycięstwo zależy od współpracy drużyny, planowania i dobrego wyboru bohaterów. Dlatego Dota 2 często nazywana jest „szachami w czasie rzeczywistym”.
+        </pre>
+    </aside>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <p>© <span id="year2"></span> DOTA2fan</p>
+
+        <div class="date-time">
+            <p>Data: <span id="data"></span></p>
+            <p>Godzina: <span id="zegarek"></span></p>
+        </div>
+
+        <div class="background-controls">
+            <button onclick="changeBackground('#0b1220')">Ciemne tło</button>
+            <button onclick="changeBackground('#1e3a8a')">Niebieskie tło</button>
+            <button onclick="changeBackground('#1e293b')">Szare tło</button>
+            <button onclick="changeBackground('#f3f4f6')">Jasne tło</button>
+        </div>
+    </div>
+</footer>
+
+<script src="./timadate.js"></script>
+<script src="./kolorujtlo.js"></script>
+<script>
+    document.getElementById('year2').textContent = new Date().getFullYear();
+    window.onload = function() {
+        startclock();
+        loadSavedBackground();
+    };
+</script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Projekt 1 — Moje hobby: Dota 2">
+    <meta name="keywords" content="Dota2, hobby, HTML5, CSS3">
+    <meta name="author" content="Raman Vaitsiuk">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Moje hobby — Dota 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="home">
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo"><a href="strona1.html">DOTA<span>2</span>fan</a></div>
+        <nav class="main-nav" aria-label="Nawigacja główna">
+            <ul>
+                <li><a href="strona2.html" class="active">Strona główna</a></li>
+                <li><a href="strona1.html">O hobby</a></li>
+                <li><a href="strona3.html">Bohaterowie</a></li>
+                <li><a href="strona6.html">Przedmioty</a></li>
+                <li><a href="strona4.html">Galeria</a></li>
+                <li><a href="strona5.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="hero">
+        <div class="container hero-content">
+            <h1>Moje hobby — Dota 2</h1>
+            <p>Dlaczego Dota 2 to coś więcej niż gra — strategia, współpraca i ciągłe doskonalenie.</p>
+            <a class="btn" href="strona1.html">Dowiedz się więcej</a>
+        </div>
+    </div>
+</header>
+
+<main class="container">
+    <section class="intro">
+        <article>
+            <h2>O projekcie</h2>
+            <p>Ten projekt przedstawia moje hobby — grę Dota 2. Znajdziesz tu informacje o bohaterach, przedmiotach, taktykach oraz moją galerię.</p>
+        </article>
+
+        <aside class="quick-links">
+            <h3>Szybkie linki</h3>
+            <ul>
+                <li><a href="strona3.html">Popularni bohaterowie</a></li>
+                <li><a href="strona6.html">Opis przedmiotów</a></li>
+                <li><a href="strona4.html">Moja galeria</a></li>
+            </ul>
+        </aside>
+    </section>
+
+    <section class="features">
+        <h2>Zawartość</h2>
+        <div class="grid">
+            <article>
+                <h3>Bohaterowie</h3>
+                <p>Krótkie zestawienia i role postaci.</p>
+            </article>
+            <article>
+                <h3>Przedmioty</h3>
+                <p>Omówienie kluczowych przedmiotów i ich kombinacji.</p>
+            </article>
+            <article>
+                <h3>Galeria</h3>
+                <p>Zrzuty ekranu i grafiki (10+ obrazów).</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="stats">
+        <h2>Porównanie ról</h2>
+        <p>Tabela pokazuje typową rolę i średni czas spędzony na linii.</p>
+        <table>
+            <thead>
+            <tr>
+                <th>Rola</th>
+                <th>Typ bohatera</th>
+                <th>Średni czas na linii</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr><td>Carry</td><td>Obrażenia fizyczne</td><td>10–20 min</td></tr>
+            <tr><td>Support</td><td>Wsparcie i kontrola</td><td>10–25 min</td></tr>
+            <tr><td>Mid</td><td>Silny farm i push</td><td>8–18 min</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="list-example">
+        <h2>Przydatne wskazówki</h2>
+        <ol>
+            <li>Komunikuj się z drużyną.</li>
+            <li>Kontroluj mapę (warding).</li>
+            <li>Zarządzaj złotem — nie kupuj bez potrzeby.</li>
+        </ol>
+
+        <h2>Za co lubię Dotę 2</h2>
+        <ul>
+            <li>Głęboka taktyka</li>
+            <li>Współpraca zespołowa</li>
+            <li>Stały rozwój mechanik</li>
+        </ul>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <p>© <span id="year"></span> DOTA2fan — Moje hobby</p>
+
+        <div class="date-time">
+            <p>Data: <span id="data"></span></p>
+            <p>Godzina: <span id="zegarek"></span></p>
+        </div>
+
+        <div class="background-controls">
+            <button onclick="changeBackground('#0b1220')">Ciemne tło</button>
+            <button onclick="changeBackground('#1e3a8a')">Niebieskie tło</button>
+            <button onclick="changeBackground('#1e293b')">Szare tło</button>
+            <button onclick="changeBackground('#f3f4f6')">Jasne tło</button>
+        </div>
+
+        <nav aria-label="Nawigacja w stopce">
+            <ul class="footer-nav">
+                <li><a href="strona1.html">O hobby</a></li>
+                <li><a href="strona5.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </div>
+</footer>
+
+<script src="./timadate.js"></script>
+<script src="./kolorujtlo.js"></script>
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    window.onload = function() {
+        startclock();
+        loadSavedBackground();
+    };
+
+</script>
+</body>
+</html>

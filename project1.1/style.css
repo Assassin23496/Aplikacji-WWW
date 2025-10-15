@@ -1,0 +1,173 @@
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #111827;
+    background: #f3f4f6;
+    line-height: 1.5;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+
+header {
+    background: #0b1220 url('./images/dota2.jpg') center/cover no-repeat;
+    color: #fff;
+    padding: 20px 0;
+}
+
+header .logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+header .logo span {
+    color: #e44e3e;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    padding: 0;
+    margin: 10px 0 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+
+nav a:hover,
+nav a.active {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+
+.hero {
+    text-align: left;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 60px 0;
+}
+
+.hero h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    color: #f9fafb;
+    max-width: 600px;
+}
+
+.btn {
+    display: inline-block;
+    background: #e44e3e;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+
+
+section {
+    margin: 40px 0;
+}
+
+.card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th {
+    background: #111827;
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+}
+
+td {
+    padding: 8px;
+    border-top: 1px solid #e5e7eb;
+}
+
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 10px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+form {
+    background: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    max-width: 600px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+
+footer {
+    background: #0b1220;
+    color: #cbd5e1;
+    text-align: center;
+    padding: 16px 0;
+    margin-top: 40px;
+}
+
+
+@media (max-width: 800px) {
+    nav ul {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .gallery img {
+        height: 120px;
+    }
+}
