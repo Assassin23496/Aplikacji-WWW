@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Przegląd przedmiotów w Dota 2">
+  <meta name="keywords" content="Dota2, przedmioty, build">
+  <meta name="author" content="Raman Vaitsiuk">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Przedmioty — Dota 2</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body class="subpage">
+<header class="site-header small">
+  <div class="container header-inner">
+    <div class="logo"><a href="strona1.html">DOTA<span>2</span>fan</a></div>
+    <nav class="main-nav" aria-label="Nawigacja">
+      <ul>
+        <li><a href="strona2.html">Strona główna</a></li>
+        <li><a href="strona1.html">O hobby</a></li>
+        <li><a href="strona3.html">Bohaterowie</a></li>
+        <li><a href="strona6.html" class="active">Przedmioty</a></li>
+        <li><a href="strona4.html">Galeria</a></li>
+        <li><a href="strona5.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <h1>Kluczowe przedmioty</h1>
+
+  <section>
+    <h2>Top-5 przedmiotów</h2>
+    <ol>
+      <li>Boots of Speed</li>
+      <li>Black King Bar</li>
+      <li>Shadow Blade / Silver Edge</li>
+      <li>Aghanim's Scepter</li>
+      <li>Blink Dagger</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Podsumowanie zastosowań</h2>
+    <p>Niektóre przedmioty lepiej nadają się do inicjacji, inne do przetrwania.</p>
+    <ul>
+      <li>Inicjacja: Blink Dagger</li>
+      <li>Przetrwanie: Black King Bar</li>
+      <li>Wsparcie: Glimmer Cape, Force Staff</li>
+    </ul>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© <span id="year4"></span> DOTA2fan</p>
+
+    <div class="date-time">
+      <p>Data: <span id="data"></span></p>
+      <p>Godzina: <span id="zegarek"></span></p>
+    </div>
+
+    <div class="background-controls">
+      <button onclick="changeBackground('#0b1220')">Ciemne tło</button>
+      <button onclick="changeBackground('#1e3a8a')">Niebieskie tło</button>
+      <button onclick="changeBackground('#1e293b')">Szare tło</button>
+      <button onclick="changeBackground('#f3f4f6')">Jasne tło</button>
+    </div>
+  </div>
+</footer>
+
+<script src="./timadate.js"></script>
+<script src="./kolorujtlo.js"></script>
+<script>
+  document.getElementById('year4').textContent = new Date().getFullYear();
+  window.onload = function() {
+    startclock();
+    loadSavedBackground();
+  };
+</script>
+</body>
+</html>
