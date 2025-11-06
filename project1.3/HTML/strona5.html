@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Kontakt — Dota 2 fan">
+  <meta name="keywords" content="kontakt, Dota2">
+  <meta name="author" content="Raman Vaitsiuk">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kontakt — Dota 2</title>
+  <link rel="stylesheet" href="../CSS/style.css">
+
+</head>
+<body class="subpage">
+<header class="site-header small">
+  <div class="container header-inner">
+    <div class="logo"><a href="strona1.html">DOTA<span>2</span>fan</a></div>
+    <nav class="main-nav" aria-label="Nawigacja">
+      <ul>
+        <li><a href="strona2.html">Strona główna</a></li>
+        <li><a href="strona1.html">O hobby</a></li>
+        <li><a href="strona3.html">Bohaterowie</a></li>
+        <li><a href="strona6.html">Przedmioty</a></li>
+        <li><a href="strona4.html">Galeria</a></li>
+        <li><a href="strona5.html" class="active">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <h1>Skontaktuj się ze mną</h1>
+  <p>Jeśli chcesz porozmawiać o Dota 2 — zostaw wiadomość.</p>
+
+  <form action="#" method="post" class="contact-form" aria-label="Formularz kontaktowy" onsubmit="return validateForm()">
+    <label for="name">Imię</label>
+    <input id="name" name="name" type="text" required>
+
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" required>
+
+    <label for="subject">Temat</label>
+    <select id="subject" name="subject">
+      <option value="">Wybierz temat</option>
+      <option value="strategia">Strategia gry</option>
+      <option value="bohaterowie">Pytanie o bohaterów</option>
+      <option value="przedmioty">Pytanie o przedmioty</option>
+      <option value="wspolpraca">Propozycja współpracy</option>
+      <option value="inne">Inne</option>
+    </select>
+
+    <label for="message">Wiadomość</label>
+    <textarea id="message" name="message" rows="6" required placeholder="Napisz swoją wiadomość..."></textarea>
+
+    <div class="form-controls">
+      <button class="btn" type="submit">Wyślij wiadomość</button>
+      <button class="btn secondary" type="button" onclick="clearForm()">Wyczyść formularz</button>
+    </div>
+  </form>
+
+  <section class="contact-info">
+    <h2>Dodatkowe informacje</h2>
+    <div class="contact-details">
+      <p><strong>Email:</strong> kontakt@dota2fan.pl</p>
+      <p><strong>Steam:</strong> DOTA2Fan_PL</p>
+      <p><strong>Discord:</strong> DOTA2Fan#1234</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© <span id="year6"></span> DOTA2fan</p>
+
+    <div class="date-time">
+      <p>Data: <span id="data"></span></p>
+      <p>Godzina: <span id="zegarek"></span></p>
+    </div>
+
+    <div class="background-controls">
+      <button onclick="changeBackground('#0b1220')">Ciemne tło</button>
+      <button onclick="changeBackground('#1e3a8a')">Niebieskie tło</button>
+      <button onclick="changeBackground('#1e293b')">Szare tło</button>
+      <button onclick="changeBackground('#f3f4f6')">Jasne tło</button>
+    </div>
+  </div>
+</footer>
+
+<script src="../JS/timadate.js"></script>
+<script src="../JS/kolorujtlo.js"></script>
+<script>
+  document.getElementById('year6').textContent = new Date().getFullYear();
+
+  // Funkcja walidacji formularza
+  function validateForm() {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    if (name.length < 2) {
+      alert('Imię musi mieć co najmniej 2 znaki');
+      return false;
+    }
+
+    if (message.length < 10) {
+      alert('Wiadomość musi mieć co najmniej 10 znaków');
+      return false;
+    }
+
+    alert('Dziękujemy za wiadomość! Odpowiemy tak szybko jak to możliwe.');
+    return true;
+  }
+
+
+  function clearForm() {
+    if (confirm('Czy na pewno chcesz wyczyścić formularz?')) {
+      document.querySelector('.contact-form').reset();
+    }
+  }
+
+  window.onload = function() {
+    startclock();
+    loadSavedBackground();
+  };
+</script>
+</body>
+</html>
