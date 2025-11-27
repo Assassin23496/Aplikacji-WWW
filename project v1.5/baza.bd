@@ -1,0 +1,13 @@
+-- Utworzenie bazy danych
+CREATE DATABASE IF NOT EXISTS moja_strona CHARACTER SET utf8mb4 COLLATE utf8mb4_polish_ci;
+
+-- Użycie bazy danych
+USE moja_strona;
+
+-- Utworzenie tabeli page_list
+CREATE TABLE IF NOT EXISTS page_list (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    page_title VARCHAR(255) NOT NULL,
+    page_content TEXT NOT NULL,
+    status INT DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
