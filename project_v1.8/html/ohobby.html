@@ -1,0 +1,86 @@
+<article>
+    <h1>Dlaczego Dota 2 to moje hobby</h1>
+    <p>Moje ulubione momenty to kiedy ja gram razem z przyjacielami i czuje że mi jest brdzo fajnie.</p>
+
+    <section>
+        <h2 id="animacjaTestowa1" class="test-block">Moja historia</h2>
+        <p>Zacząłem grać w Dota 2 w 2024. Gra nauczyła mnie współpracy zespołowej i szybkiego podejmowania decyzji.</p>
+    </section>
+
+    <section>
+        <h2 id="animacjaTestowa3" class="test-block">Czego się nauczyłem</h2>
+        <ul>
+            <li>Planowanie taktyczne</li>
+            <li>Radzenie sobie ze stresem podczas meczu</li>
+            <li>Analiza powtórek</li>
+        </ul>
+    </section>
+</article>
+
+<aside>
+    <h3 id="animacjaTestowa2" class="test-block">Ciekawe fakty</h3>
+    <pre>
+1. Dota 2 powstała jako kontynuacja modyfikacji do Warcraft III.
+Oryginalna mapa nazywała się Defense of the Ancients (DotA) i była stworzona przez fanów. Valve później kupiło prawa i zrobiło z niej pełnoprawną grę.
+
+2. W Dota 2 każdy mecz jest inny.
+Gra ma ponad 120 bohaterów, a każdy z nich ma unikalne umiejętności. Dzięki temu nie ma dwóch identycznych rozgrywek.
+
+3. The International to jeden z największych turniejów e-sportowych na świecie.
+Pula nagród często przekracza 40 milionów dolarów — to więcej niż w wielu tradycyjnych sportach!
+
+4. Dota 2 ma własną ekonomię i rynek przedmiotów.
+Gracze mogą zdobywać lub kupować skórki (tzw. skiny) dla bohaterów i sprzedawać je na Steam Market — czasem za setki euro.
+
+5. Gra wymaga nie tylko refleksu, ale też strategii.
+Zwycięstwo zależy od współpracy drużyny, planowania i dobrego wyboru bohaterów. Dlatego Dota 2 często nazywana jest „szachami w czasie rzeczywistym”.
+    </pre>
+</aside>
+
+<div class="date-time">
+    <p>Data: <span id="data"></span></p>
+    <p>Godzina: <span id="zegarek"></span></p>
+</div>
+
+<div class="background-controls">
+    <button onclick="changeBackground('#0b1220')">Ciemne tło</button>
+    <button onclick="changeBackground('#1e3a8a')">Niebieskie tło</button>
+    <button onclick="changeBackground('#1e293b')">Szare tło</button>
+    <button onclick="changeBackground('#f3f4f6')">Jasne tło</button>
+</div>
+
+<script>
+    $("#animacjaTestowa1").on("click", function() {
+        $(this).animate({
+            width: "500px",
+            opacity: 0.4,
+            fontSize: "3em",
+            borderWidth: "10px"
+        }, 1500);
+    });
+
+    $("#animacjaTestowa2").on({
+        mouseover: function() {
+            $(this).animate({
+                width: 300
+            }, 800);
+        },
+        mouseout: function() {
+            $(this).animate({
+                width: 200
+            }, 800);
+        }
+    });
+
+    $("#animacjaTestowa3").on("click", function() {
+        if (!$(this).is(":animated")) {
+            $(this).animate({
+                width: "+=50",
+                height: "+=10",
+                opacity: "+=0.1"
+            }, {
+                duration: 3000
+            });
+        }
+    });
+</script>
