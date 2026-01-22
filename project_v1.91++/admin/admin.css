@@ -1,0 +1,341 @@
+/* ===============================
+   PANEL ADMINISTRATORA – DOTA 2
+   (wersja oczyszczona, bez duplikatów)
+   =============================== */
+
+* { box-sizing: border-box; }
+
+body{
+    margin:0;
+    font-family:"Segoe UI", Arial, sans-serif;
+    background: radial-gradient(circle at top, #1b2a4a, #0b1220);
+    color:#e6e6e6;
+}
+
+/* Linki */
+a{ color:#ffae00; text-decoration:none; }
+a:hover{ text-decoration:underline; }
+
+/* Layout */
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:20px;
+}
+
+/* Topbar */
+.topbar{
+    background: linear-gradient(90deg, #0b1220, #16213a);
+    border-bottom:2px solid #ffae00;
+}
+.topbar .container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+.brand{ display:flex; align-items:center; gap:10px; }
+.badge{
+    background:#ffae00;
+    color:#000;
+    font-weight:bold;
+    padding:6px 10px;
+    border-radius:6px;
+}
+.subbrand{ font-size:12px; color:#bbb; }
+
+/* Przyciski */
+.btn{
+    display:inline-block;
+    padding:8px 14px;
+    border-radius:6px;
+    background:#243a6b;
+    color:#fff;
+    border:1px solid #ffae00;
+    font-size:14px;
+    margin-right:6px;
+    cursor:pointer;
+}
+.btn:hover{
+    background:#ffae00;
+    color:#000;
+}
+.btn.primary{
+    background:#ffae00;
+    color:#000;
+    font-weight:bold;
+}
+.btn.danger{
+    background: rgba(213,42,42,0.20);
+    border-color: rgba(213,42,42,0.65);
+}
+.btn.danger:hover{
+    background:#d52a2a;
+    color:#000;
+}
+
+/* Karty */
+.card{
+    background: linear-gradient(180deg, #16213a, #0d1527);
+    border-radius:12px;
+    padding:20px;
+    box-shadow:0 0 25px rgba(0,0,0,0.60);
+    margin-bottom:20px;
+}
+.card-h{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+.card-h h1, .card-h h2{ margin:0; }
+
+/* Grid / kafelki */
+.grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap:20px;
+}
+.tile{
+    background:#0b1220;
+    border:1px solid #ffae00;
+    border-radius:10px;
+    padding:14px;
+}
+
+/* Tabela */
+.table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:10px;
+}
+.table th, .table td{
+    border-bottom:1px solid #333;
+    padding:8px;
+    text-align:left;
+}
+.table th{ color:#ffd369; }
+
+/* Formularze */
+form label{
+    display:block;
+    margin-bottom:4px;
+    font-weight:bold;
+}
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=number],
+textarea,
+select{
+    width:100%;
+    padding:8px;
+    border-radius:6px;
+    border:1px solid #444;
+    background:#0b1220;
+    color:#fff;
+    margin-bottom:12px;
+}
+textarea{ resize:vertical; }
+
+/* Informacje */
+.pill{
+    background:#ffae00;
+    color:#000;
+    padding:4px 10px;
+    border-radius:20px;
+    font-size:12px;
+}
+.small{ font-size:12px; color:#aaa; }
+
+/* Formularz 2-kolumnowy */
+.form-split{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:14px;
+}
+@media (max-width: 900px){
+    .form-split{ grid-template-columns:1fr; }
+}
+
+/* ===============================
+   PRODUKTY (admin/products.php)
+   =============================== */
+
+.product-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap:18px;
+    margin-top:14px;
+}
+
+.product-card{
+    background: linear-gradient(180deg, #16213a, #0b1220);
+    border: 1px solid rgba(255,174,0,0.55);
+    border-radius:14px;
+    padding:14px;
+    box-shadow:0 10px 22px rgba(0,0,0,0.35);
+    position:relative;
+    overflow:hidden;
+}
+
+.product-card:before{
+    content:"";
+    position:absolute;
+    inset:-2px;
+    background: radial-gradient(500px 180px at 20% 0%, rgba(255,174,0,0.18), transparent 60%);
+    pointer-events:none;
+}
+
+.product-card .title{
+    font-size:16px;
+    font-weight:800;
+    color:#ffd369;
+    margin:8px 0;
+}
+
+.product-card .meta{
+    font-size:13px;
+    color:#cfcfcf;
+    line-height:1.45;
+}
+
+.product-img{
+    width:100%;
+    max-height:180px;
+    object-fit:cover;
+    border-radius:12px;
+    border:2px solid rgba(255,174,0,0.75);
+    background:#000;
+    margin-top:10px;
+}
+
+.product-actions{
+    display:flex;
+    gap:10px;
+    margin-top:12px;
+    flex-wrap:wrap;
+}
+
+/* ===============================
+   KATEGORIE (admin/categories.php)
+   =============================== */
+
+.category-tree ul{
+    list-style:none;
+    padding-left:18px;
+    margin:10px 0;
+}
+
+.category-tree li{
+    margin:10px 0;
+    padding:10px 12px;
+    border-radius:12px;
+    border:1px solid rgba(255,174,0,0.35);
+    background: rgba(0,0,0,0.15);
+    position:relative;
+}
+
+.category-tree li:before{
+    content:"";
+    position:absolute;
+    left:-10px;
+    top:16px;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#ffae00;
+    box-shadow:0 0 10px rgba(255,174,0,0.35);
+}
+
+.category-tree li ul li{
+    border-color: rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.03);
+}
+
+.cat-name{
+    font-weight:800;
+    color:#ffd369;
+}
+
+.category-actions{ margin-top:8px; }
+.category-actions .btn{
+    padding:6px 10px;
+    font-size:13px;
+    margin-right:0;
+}
+/* ===============================
+   PRZYCISK: DODAJ DO KOSZYKA
+   =============================== */
+
+.btn-cart{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:10px 16px;
+    border-radius:10px;
+    background: linear-gradient(180deg, #ffae00, #ff8c00);
+    color:#000;
+    font-weight:800;
+    border:2px solid #ffcf4d;
+    cursor:pointer;
+    transition: all .2s ease;
+    box-shadow:0 0 12px rgba(255,174,0,.45);
+}
+
+.btn-cart:hover{
+    transform: translateY(-2px);
+    box-shadow:0 0 18px rgba(255,174,0,.8);
+}
+
+.btn-cart:active{
+    transform: scale(0.97);
+}
+
+.btn-cart.added{
+    background: linear-gradient(180deg, #3cff6d, #1fa34a);
+    border-color:#7dff9a;
+    color:#000;
+}
+/* ===============================
+   KOSZYK
+   =============================== */
+
+.cart-box{
+    max-width:900px;
+    margin:40px auto;
+    padding:30px;
+    background:#0b1320;
+    border:2px solid #2a3a55;
+    border-radius:14px;
+    box-shadow:0 0 40px rgba(0,0,0,.6);
+    color:#e6ebff;
+}
+
+.cart-box h1{
+    color:#ffae00;
+    text-shadow:0 0 10px rgba(255,174,0,.6);
+}
+
+.cart-box ul{
+    list-style:none;
+    padding:0;
+}
+
+.cart-box li{
+    border-bottom:1px solid #24344f;
+    padding:12px 0;
+}
+
+.cart-box a{
+    color:#ff4d4d;
+    text-decoration:none;
+    font-weight:700;
+}
+
+.cart-box a:hover{
+    text-decoration:underline;
+}

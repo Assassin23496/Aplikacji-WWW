@@ -1,0 +1,76 @@
+<h1>Skontaktuj się ze mną</h1>
+<p>Jeśli chcesz porozmawiać o Dota 2 — zostaw wiadomość.</p>
+
+<form action="#" method="post" class="contact-form" aria-label="Formularz kontaktowy" onsubmit="return validateForm()">
+    <label for="name">Imię</label>
+    <input id="name" name="name" type="text" required>
+
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" required>
+
+    <label for="subject">Temat</label>
+    <select id="subject" name="subject">
+        <option value="">Wybierz temat</option>
+        <option value="strategia">Strategia gry</option>
+        <option value="bohaterowie">Pytanie o bohaterów</option>
+        <option value="przedmioty">Pytanie o przedmioty</option>
+        <option value="wspolpraca">Propozycja współpracy</option>
+        <option value="inne">Inne</option>
+    </select>
+
+    <label for="message">Wiadomość</label>
+    <textarea id="message" name="message" rows="6" required placeholder="Napisz swoją wiadomość..."></textarea>
+
+    <div class="form-controls">
+        <button class="btn" type="submit">Wyślij wiadomość</button>
+        <button class="btn secondary" type="button" onclick="clearForm()">Wyczyść formularz</button>
+    </div>
+</form>
+
+<section class="contact-info">
+    <h2>Dodatkowe informacje</h2>
+    <div class="contact-details">
+        <p><strong>Email:</strong> kontakt@dota2fan.pl</p>
+        <p><strong>Steam:</strong> DOTA2Fan_PL</p>
+        <p><strong>Discord:</strong> DOTA2Fan#1234</p>
+    </div>
+</section>
+
+<div class="date-time">
+    <p>Data: <span id="data"></span></p>
+    <p>Godzina: <span id="zegarek"></span></p>
+</div>
+
+<div class="background-controls">
+    <button onclick="changeBackground('#0b1220')">Ciemne tło</button>
+    <button onclick="changeBackground('#1e3a8a')">Niebieskie tło</button>
+    <button onclick="changeBackground('#1e293b')">Szare tło</button>
+    <button onclick="changeBackground('#f3f4f6')">Jasne tło</button>
+</div>
+
+<script>
+    function validateForm() {
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        if (name.length < 2) {
+            alert('Imię musi mieć co najmniej 2 znaki');
+            return false;
+        }
+
+        if (message.length < 10) {
+            alert('Wiadomość musi mieć co najmniej 10 znaków');
+            return false;
+        }
+
+        alert('Dziękujemy za wiadomość! Odpowiemy tak szybko jak to możliwe.');
+        return true;
+    }
+
+    function clearForm() {
+        if (confirm('Czy na pewno chcesz wyczyścić formularz?')) {
+            document.querySelector('.contact-form').reset();
+        }
+    }
+</script>
